@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="학생A"
+            android:gravity="center|left"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:textColor="#295a7f"
+            android:textStyle="bold"
+            android:id="@+id/viewer_writer"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="2013-11-07 19:23"
+            android:gravity="center|right"
+            android:id="@+id/viewer_write_time"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:id="@+id/viewer_image_view"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="제목"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:gravity="center_vertical"
+        android:id="@+id/viewer_title"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="본문 내용"
+        android:gravity="top"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:id="@+id/viewer_content"/>
+
+
+</LinearLayout>

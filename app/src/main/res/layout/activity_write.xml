@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Write"
+        android:textAllCaps="false"
+        android:id="@+id/write_upload_button" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="작성자명"
+        android:id="@+id/write_writer" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:id="@+id/write_image_button" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="제목"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:id="@+id/write_title" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="본문 내용"
+        android:gravity="top"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:id="@+id/write_content" />
+
+
+</LinearLayout>

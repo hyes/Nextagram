@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.viz.nextagram">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission android:name="com.example.viz.nextagram.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="com.example.viz.nextagram.permission.C2D_MESSAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+
+
+        >
+
+        <receiver
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.example.viz.nextagram.GcmIntentService" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".GcmIntentService" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            />
+
+        <activity
+            android:name=".HomeView"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WritingArticleView"
+            android:label="@string/title_activity_write">
+            <intent-filter>
+                <action android:name=".WritingArticle"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+            </activity>
+
+         <activity
+            android:name=".ArticleView"
+            android:label="@string/title_activity_viewer">
+            <intent-filter>
+                <action android:name=".ArticleView"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            </activity>
+
+        <service
+            android:name="com.example.viz.nextagram.SyncDataService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.viz.nextagram.SyncDataService"/>
+                <action android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </service>
+
+        <provider
+            android:authorities="com.example.nextagram.provider"
+            android:name=".NextagramProvider"
+            android:enabled="true"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:readPermission="com.example.nextagram.provider.READ"
+            android:writePermission="com.example.nextagram.provider.WRITE" />
+
+
+    </application>
+
+</manifest>
